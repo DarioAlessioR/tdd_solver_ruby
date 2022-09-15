@@ -1,14 +1,13 @@
 class Solver
   def factorial(n_fact)
     n = n_fact.to_i
-    if n < 0
+    if n.negative?
       'error: no negative argument accepted'
-    elsif
-      n == 0
+    elsif n.zero?
       1
     else
       n * factorial(n - 1)
-    end  
+    end
   end
 
   def reverse(str)
@@ -17,13 +16,11 @@ class Solver
 
   def fizzbuzz(n_fizzbuzz)
     n = n_fizzbuzz.to_i
-    if (n % 3) == 0 && (n % 5) == 0
+    if (n % 3).zero? && (n % 5).zero?
       'fizzbuzz'
-    elsif
-      (n % 3) == 0
+    elsif (n % 3).zero?
       'fizz'
-    elsif
-      n % 5 == 0
+    elsif (n % 5).zero?
       'buzz'
     else
       n
@@ -42,31 +39,27 @@ class Solver
     puts '2) Reverse'
     puts '3) Fizzbuzz'
     puts '4) Exit from the app'
+    options
+  end
+
+  def options
     opc = gets.chomp
     case opc
     when '1'
       puts 'Please input the number you want evaluate factorial on:'
-      input = gets.chomp 
+      input = gets.chomp
       puts "The factorial of #{input} is: #{factorial(input)}"
-      sleep(2)
       menu
     when '2'
       puts 'Please input the string you want reverse:'
-      input = gets.chomp 
+      input = gets.chomp
       puts "The reverse of #{input} is: #{input.reverse}"
-      sleep(2)
       menu
     when '3'
       puts 'Please input the number you want apply fizzbuzz method on:'
-      input = gets.chomp 
+      input = gets.chomp
       puts "The fizzbuzz of #{input} is: #{fizzbuzz(input)}"
-      sleep(2)
       menu
-    when '4'
-      puts 'Thank you for using the app!!!'
-      puts "\n"
-      sleep(2)
-      exit_from_app
     else
       exit_from_app
     end
