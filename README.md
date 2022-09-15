@@ -40,6 +40,7 @@ To run test in terminal please type: rspec spec
 
 ## Built With:
 Major languages: Ruby
+
 Technologies used: VSC, Github, Gitflow, RSpec
 
 ##  Authors
